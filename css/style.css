@@ -1,0 +1,135 @@
+html {
+   height: 100%;
+}
+
+body {
+   font-family: Arial, Helvetica, sans-serif;
+   color: #333;
+   height: 70%;
+   background: rgb(223, 222, 156);
+   background: linear-gradient(
+      0deg,
+      rgba(223, 222, 156, 1) 0%,
+      rgba(254, 255, 238, 1) 100%
+   );
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+}
+
+/* pantalla pequeña ──────────────────────────────── */
+#pantalla1 {
+   background: rgb(182, 231, 201);
+   border-top-left-radius: 10px;
+   border-top-right-radius: 10px;
+   border: 1px rgb(126, 114, 114, 0.5) solid;
+   font-family: "Inconsolata", monospace;
+   font-weight: normal;
+   height: 15px;
+   margin-bottom: 0px;
+   margin-top: 0px;
+   padding: 3px 10px 3px 3px;
+   z-index: 1;
+   text-align: right;
+}
+
+/* pantalla grande ──────────────────────────────────── */
+#pantalla2 {
+   background: rgb(182, 231, 201);
+   border-bottom-left-radius: 10px;
+   border-bottom-right-radius: 10px;
+   border: 1px rgba(126, 114, 114, 0.5) solid;
+   font-family: "Inconsolata", monospace;
+   font-size: x-large;
+   font-weight: bold;
+   height: 30px;
+   margin: 0px 0px 20px 0px;
+   padding: 10px;
+   text-align: right;
+}
+
+/* contenedor calculadora ──────────────────────────────────── */
+#calculadora {
+   background: linear-gradient(
+      0deg,
+      rgb(0, 0, 0) 2%,
+      rgb(34, 34, 34) 5%,
+      rgb(34, 34, 34) 68%,
+      rgb(80, 80, 80) 72%
+   );
+   width: min-content;
+   padding: 25px;
+   border-bottom-left-radius: 10px;
+   border-bottom-right-radius: 10px;
+   border-top-left-radius: 10px;
+   border-top-right-radius: 10px;
+   margin: 0 auto; /* para centrar el div en pantalla */
+   margin-top: 20px;
+   text-align: center;
+}
+
+/* marca casio fx-82 ──────────────────────────────────────────── */
+#marca {
+   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+   font-size: large;
+   font-style: italic;
+   text-align: right;
+   color: rgb(158, 154, 154);
+   margin: 0;
+}
+
+/* botones ──────────────────────────────────────────────────────── */
+.boton {
+   color: rgb(255, 255, 255);
+   font-size: 1rem;
+   padding: 0%;
+   height: 40px;
+   width: 50px;
+   margin: 1px;
+   border: 1px #1f6492 solid;
+   border-radius: 6px;
+   background: #174a6c;
+   font-family: "Inconsolata", monospace;
+   font-size: 1.1rem;
+}
+
+.boton-rojo {
+   background: #e11521;
+}
+.boton-amarillo {
+   background: #ff8617;
+}
+
+.boton-azul {
+   background: #2f98de;
+}
+
+.boton-verde {
+   background: #1d9e34;
+}
+
+.boton-operador {
+   background: #2772a8;
+}
+
+.boton:hover {
+   background: #557083;
+   transition: background 0.2s;
+   color: #e7ebed;
+}
+
+#memoriaOn {
+   font-family: "Inconsolata", monospace;
+   background: rgb(182, 231, 201);
+   position: absolute;
+   margin-top: 2px;
+   margin-left: 20px;
+   z-index: 0;
+}
+
+table,
+th,
+tr,
+td {
+   margin: 0;
+   padding: 0;
+}

@@ -1,0 +1,296 @@
+<!-- Nombre del programa: Calculadora
+   * Información de la versión: 1.0
+   * Fecha: 6/5/22
+   * Copyright: Juan Manuel Gutiérrez
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="./funciones.js" type="text/javascript"></script>
+        <link rel="stylesheet" href="./css/style.css" />
+
+        <!-- Librería de Iconos -->
+        <script
+            src="https://kit.fontawesome.com/ad22caf6eb.js"
+            crossorigin="anonymous"
+        ></script>
+
+        <!-- librerías de fuentes -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;400;900&family=Noto+Sans+Math&display=swap"
+            rel="stylesheet"
+        />
+        <title>Calculadora v3.0</title>
+    </head>
+
+    <body>
+        <div class="container col-sm-4" id="calculadora">
+            <form action="#" name="calculadora">
+                <table>
+                    <tr>
+                        <!--  fila pantallas ────────────────────────────────────────────── -->
+                        <td colspan="6">
+                            <p id="memoriaOn"></p>
+                            <p id="pantalla1">0</p>
+                            <p id="pantalla2">0</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <!--  Primera fila ──────────────────────────────────────────────── -->
+                        <td>
+                            <button
+                                class="boton boton-rojo"
+                                onclick="borradoTotal()"
+                                title="Borrado completo"
+                            >
+                                C
+                            </button>
+                        </td>
+                        <td>
+                            <button
+                                class="boton boton-amarillo"
+                                onclick="borradoParcial()"
+                                title="Borrado del último operador"
+                            >
+                                CE
+                            </button>
+                        </td>
+                        <td>
+                            <button
+                                class="boton boton-amarillo"
+                                onclick="retroceso()"
+                                title="Borrado del último dígito introducido"
+                            >
+                                <i class="fa-solid fa-left-long"></i>
+                            </button>
+                        </td>
+                        <td>
+                            <button
+                                class="boton boton-azul"
+                                onclick="memoria()"
+                                title="Suma en memoria"
+                            >
+                                M
+                            </button>
+                        </td>
+                        <td>
+                            <button
+                                class="boton boton-azul"
+                                onclick="memoriaR()"
+                                title="Recuperar memoria"
+                            >
+                                MR
+                            </button>
+                        </td>
+                        <td>
+                            <button
+                                class="boton boton-operador"
+                                onclick="operar('/')"
+                                title="Dividir"
+                            >
+                                <i class="fa-solid fa-divide"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <!--  Segunda fila ──────────────────────────────────────────────── -->
+                        <td>
+                            <button class="boton" onclick="numero('7')">
+                                <i class="fa-solid fa-7"></i>
+                            </button>
+                        </td>
+                        <td>
+                            <button class="boton" onclick="numero('8')">
+                                <i class="fa-solid fa-8"></i>
+                            </button>
+                        </td>
+                        <td>
+                            <button class="boton" onclick="numero('9')">
+                                <i class="fa-solid fa-9"></i>
+                            </button>
+                        </td>
+                        <td>
+                            <button
+                                class="boton boton-azul"
+                                onclick="operar('%')"
+                                title="Resto"
+                            >
+                                Resto
+                            </button>
+                        </td>
+                        <td>
+                            <button
+                                class="boton boton-azul"
+                                onclick="elevado()"
+                                title="Cuadrado"
+                            >
+                                X<sup>2</sup>
+                            </button>
+                        </td>
+                        <td>
+                            <button
+                                class="boton boton-operador"
+                                onclick="operar('*')"
+                                title="Multiplicar"
+                            >
+                                <i class="fa-solid fa-xmark"></i>
+                            </button>
+                        </td>
+                    </tr>
+
+                    <!--  Tercera fila ──────────────────────────────────────────────────── -->
+                    <tr>
+                        <td>
+                            <button class="boton" onclick="numero('4')">
+                                <i class="fa-solid fa-4"></i>
+                            </button>
+                        </td>
+                        <td>
+                            <button class="boton" onclick="numero('5')">
+                                <i class="fa-solid fa-5"></i>
+                            </button>
+                        </td>
+                        <td>
+                            <button class="boton" onclick="numero('6')">
+                                <i class="fa-solid fa-6"></i>
+                            </button>
+                        </td>
+                        <td>
+                            <button
+                                class="boton boton-azul"
+                                onclick="factorial()"
+                                title="Factorial"
+                            >
+                                x!
+                            </button>
+                        </td>
+                        <td>
+                            <button
+                                class="boton boton-azul"
+                                onclick="numeroEspecial('pi')"
+                                title="Número Pi"
+                            >
+                                &#928;
+                            </button>
+                        </td>
+                        <td>
+                            <button
+                                class="boton boton-operador"
+                                onclick="operar('-')"
+                                title="Menos"
+                            >
+                                <i class="fa-solid fa-minus"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <!--  Cuarta fila ──────────────────────────────────────────────────── -->
+                    <tr>
+                        <td>
+                            <button class="boton" onclick="numero('1')">
+                                <i class="fa-solid fa-1"></i>
+                            </button>
+                        </td>
+                        <td>
+                            <button class="boton" onclick="numero('2')">
+                                <i class="fa-solid fa-2"></i>
+                            </button>
+                        </td>
+                        <td>
+                            <button class="boton" onclick="numero('3')">
+                                <i class="fa-solid fa-3"></i>
+                            </button>
+                        </td>
+                        <td>
+                            <button
+                                class="boton boton-azul"
+                                onclick="raiz()"
+                                title="Raiz cuadrada"
+                            >
+                                &#8730;
+                            </button>
+                        </td>
+                        <td>
+                            <button
+                                class="boton boton-azul"
+                                onclick="numeroEspecial('numeroE')"
+                                title="Número e"
+                            >
+                                <em>e</em>
+                            </button>
+                        </td>
+                        <td>
+                            <button
+                                class="boton boton-operador"
+                                onclick="operar('+')"
+                                title="Más"
+                            >
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                        </td>
+                    </tr>
+
+                    <!--  Quinta fila ──────────────────────────────────────────────────── -->
+                    <tr>
+                        <td>
+                            <button class="boton" onclick="numero('0')">
+                                <i class="fa-solid fa-0"></i>
+                            </button>
+                        </td>
+                        <td>
+                            <button
+                                class="boton boton-azul"
+                                onclick="numero('.')"
+                                title="Punto decimal"
+                            >
+                                .
+                            </button>
+                        </td>
+                        <td>
+                            <button
+                                class="boton boton-azul"
+                                onclick="opuesto()"
+                                title="Invertir signo"
+                            >
+                                <i class="fa-solid fa-plus-minus"></i>
+                            </button>
+                        </td>
+                        <td>
+                            <button
+                                class="boton boton-azul"
+                                onclick="inverso()"
+                                title="Inverso"
+                            >
+                                1/x
+                            </button>
+                        </td>
+                        <td>
+                            <button
+                                class="boton boton-azul"
+                                onclick="porCiento()"
+                                title="Por ciento"
+                            >
+                                <i class="fa-solid fa-percent"></i>
+                            </button>
+                        </td>
+                        <td>
+                            <button
+                                class="boton boton-verde"
+                                onclick="igual()"
+                                title="Igual"
+                            >
+                                <i class="fa-solid fa-equals"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+            <p id="marca">v 1.0</p>
+        </div>
+    </body>
+</html>
