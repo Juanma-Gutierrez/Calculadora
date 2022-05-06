@@ -3,10 +3,11 @@ Proyecto realizado como tarea de clase del curso de certificado de profesionalid
 
 ## Comenzando 🚀
 Se trata de una calculadora básica, con algunas funciones científicas.
-Lenguajes utilizados:<br>
-   ◽ HTML<br>
-   ◽ CSS<br>
-   ◽ Javascript.
+
+### Lenguajes utilizados:<br>
+- HTML
+- CSS
+- Javascript
 
 ## Construido con 🛠️
 
