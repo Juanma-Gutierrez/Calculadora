@@ -12,5 +12,5 @@ Lenguajes utilizados:<br>
 
 * VSCode - Editor de código fuente
 
-## Autores ✒️
+## Autor ✒️
 * **Juanma Gutiérrez** - [Juanma-Gutierrez](https://github.com/Juanma-Gutierrez)
